@@ -16,7 +16,7 @@ const Header = () => {
                 <Toolbar sx={{ backgroundColor: '#101010', display: 'flex', flexWrap: 'wrap' }} sm={{ flexDirection: 'column' }} >
                     <NavLink style={{ textDecoration: 'none', marginRight: 'auto' }} to="/home">
                         <Typography variant="h5" component="div" sx={{ color: '#FF6600' }} style={{ fontFamily: 'Poppins', fontWeight: '700' }}>
-                            DHOOM
+                            MobilePoint
                         </Typography>
                     </NavLink>
                     <>

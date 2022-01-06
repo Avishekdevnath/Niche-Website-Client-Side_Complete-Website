@@ -18,11 +18,11 @@ const Questions = () => {
                                 aria-controls="panel1a-content"
                                 id="panel1a-header"
                             >
-                                <Typography>How to get technical support from Dhoom?</Typography>
+                                <Typography>How to get technical support from mobilepoint?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    If you have any questions, please send a message to our email: support@Dhoom.com or leave a message on our fanpage or submit a question on our forum.
+                                    If you have any questions, please send a message to our email: support@mobilepoint.com or leave a message on our fanpage or submit a question on our forum.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -46,7 +46,7 @@ const Questions = () => {
                                 aria-controls="panel2a-content"
                                 id="panel2a-header"
                             >
-                                <Typography>How long will it take to get a new bike?</Typography>
+                                <Typography>How long will it take to get a new mobile?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>

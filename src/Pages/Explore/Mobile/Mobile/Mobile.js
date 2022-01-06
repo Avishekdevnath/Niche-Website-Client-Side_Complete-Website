@@ -5,15 +5,14 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import Footer from '../../../Shared/Footer/Footer';
 import Header from '../../../Shared/Header/Header';
-import BikeDetails from '../BikeDetails/BikeDetails';
-import BikeDetailsCart from '../BikeDetailsCart/BikeDetailsCart';
+import MobileDetailsCart from '../MobileDetailsCart/MobileDetailsCart';
+import MobileDetails from '../MobileDetails/MobileDetails';
 
-const Bike = () => {
-    const { bikeID } = useParams();
+const Mobile = () => {
+    const { mobileID } = useParams();
 
-    const bikes = useSelector((state) => state.bikesReducer.bikes);
-
-    const bike = bikes.filter(bike => bike._id === bikeID);
+    const mobiles = useSelector((state) => state.mobilesReducer.mobiles);
+    const mobile = mobiles.filter(mobile => mobile._id === mobileID);
 
     return (
         <>
@@ -22,17 +21,17 @@ const Bike = () => {
                 className="banner"
                 sx={{
                     height: '85vh',
-                    background: `url("${bike[0].picture}")`,
+                    background: `url("${mobile[0].picture}")`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: '100% 100%'
                 }}></Box>
             <Container sx={{ flexGrow: 1, mx: 'auto', mt: 5 }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={8}>
-                        <BikeDetails bike={bike[0]}></BikeDetails>
+                        <MobileDetails mobile={mobile[0]}></MobileDetails>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <BikeDetailsCart bike={bike[0]}></BikeDetailsCart>
+                        <MobileDetailsCart mobile={mobile[0]}></MobileDetailsCart>
                     </Grid>
                 </Grid>
             </Container>
@@ -41,4 +40,4 @@ const Bike = () => {
     );
 };
 
-export default Bike;
+export default Mobile;

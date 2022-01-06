@@ -4,10 +4,10 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import useAuth from '../../../../Hooks/useAuth';
 
-const BikeDetailsCart = (props) => {
-    const { price, picture, name } = props.bike;
+const MobileDetailsCart = (props) => {
+    const { price, picture, name } = props.mobile;
     const { user } = useAuth();
-    const bikeData = { picture, name };
+    const mobileData = { picture, name };
     const initialInfo = { displayName: user.displayName, email: user.email, status: 'pending' }
     const [order, setOrder] = useState(initialInfo);
 
@@ -30,7 +30,7 @@ const BikeDetailsCart = (props) => {
         const field = e.target.name;
         const value = e.target.value;
         const newOrderData = { ...order };
-        newOrderData["bike"] = bikeData;
+        newOrderData["mobile"] = mobileData;
         newOrderData[field] = value;
         setOrder(newOrderData);
         // e.reset();
@@ -38,7 +38,7 @@ const BikeDetailsCart = (props) => {
 
 
     const handleCartSubmit = (e) => {
-        axios.post('https://pacific-oasis-02900.herokuapp.com/allOrders', order)
+        axios.post('https://mobilepointserver.herokuapp.com/allOrders', order)
             .then(data => {
                 const id = data.data.insertedId;
                 if (id) {
@@ -53,7 +53,7 @@ const BikeDetailsCart = (props) => {
 
     return (
         <Box sx={{ border: '1px solid #ff8000', p: 2 }}>
-            <Typography sx={{ fontWeight: 'bold', display: 'flex', justifyContent: 'center' }} variant="h5">Price: <Box sx={{ color: 'Red' }}> ${price}</Box></Typography>
+            <Typography sx={{ fontWeight: 'bold', display: 'flex', justifyContent: 'center' }} variant="h5">Price: <Box sx={{ color: 'Red' }}> ৳ {price}</Box></Typography>
             <Typography sx={{ fontWeight: 'bold', mt: 3 }} variant="h4">{user.displayName}</Typography>
             <Typography sx={{ fontWeight: 'bold' }} variant="h6">{user.email}</Typography>
             <form style={{ marginTop: "15px" }} onSubmit={handleCartSubmit}>
@@ -88,4 +88,4 @@ const BikeDetailsCart = (props) => {
     );
 };
 
-export default BikeDetailsCart;
+export default MobileDetailsCart;

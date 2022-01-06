@@ -10,16 +10,17 @@ import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import { useSelector } from 'react-redux';
 
 const Explore = () => {
-    const bikes = useSelector((state) => state.bikesReducer.bikes);
+    const mobiles = useSelector((state) => state.mobilesReducer.mobiles);
+
     return (
         <>
             <Header></Header>
-            <h1>Explore our beautiful bikes</h1>
+            <h1>Explore our beautiful mobiles</h1>
             <Container sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     {
-                        bikes.map(bike => {
-                            const { _id, name, picture, shortDescription, rating, price, mileage } = bike;
+                        mobiles.map(mobile => {
+                            const { _id, name, picture, shortDescription, rating, price, mileage } = mobile;
                             return (
                                 <Grid key={_id} item xs={12} md={4}>
                                     <Card sx={{ maxWidth: 345, mx: 'auto', height: '100%', boxShadow: 3 }}>
@@ -44,18 +45,18 @@ const Explore = () => {
                                             }}>
 
                                                 <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
-                                                    <PaymentIcon sx={{ color: '#ff8000' }} /> Price: $ {price}
+                                                    <PaymentIcon sx={{ color: '#ff8000' }} /> Price: ৳ {price}
                                                 </Typography>
                                                 <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
                                                     <StarIcon sx={{ color: '#ff8000' }} /> Ratings: {rating}
                                                 </Typography>
-                                                <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
+                                                {/* <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
                                                     <LocalGasStationIcon sx={{ color: '#ff8000' }} /> mileage: {mileage} kmpl
-                                                </Typography>
+                                                </Typography> */}
                                             </Box>
                                         </CardContent>
                                         <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
-                                            <NavLink to={`/bikeDetails/${_id}`} style={{ textDecoration: 'none' }}>
+                                            <NavLink to={`/mobileDetails/${_id}`} style={{ textDecoration: 'none' }}>
                                                 <Button sx={{ px: 4, mb: 2, backgroundColor: '#ff8000' }} variant="contained">Buy Now</Button>
                                             </NavLink>
                                         </CardActions>

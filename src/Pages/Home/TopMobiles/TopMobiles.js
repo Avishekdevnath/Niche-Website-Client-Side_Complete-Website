@@ -7,17 +7,17 @@ import PaymentIcon from '@mui/icons-material/Payment';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import { useSelector } from 'react-redux';
 
-const TopBikes = () => {
-    const bikes = useSelector((state) => state.bikesReducer.bikes);
+const TopMobiles = () => {
+    const mobiles = useSelector((state) => state.mobilesReducer.mobiles);
 
     return (
         <>
-            <h1>Our Best Bikes</h1>
+            <h1>Our Best Mobiles</h1>
             <Container sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
                     {
-                        bikes.slice(0, 6).map(bike => {
-                            const { _id, name, picture, shortDescription, rating, price, mileage } = bike;
+                        mobiles.slice(0, 6).map(mobile => {
+                            const { _id, name, picture, shortDescription, rating, price, mileage } = mobile;
                             return (
                                 <Grid key={_id} item xs={12} md={4}>
                                     <Card sx={{ maxWidth: 345, mx: 'auto', height: '100%', boxShadow: 3 }}>
@@ -42,18 +42,15 @@ const TopBikes = () => {
                                             }}>
 
                                                 <Typography variant="h6" sx={{ display: 'flex', alignItems: 'center' }}>
-                                                    <PaymentIcon sx={{ color: '#ff8000' }} /> Price: $ {price}
+                                                    <PaymentIcon sx={{ color: '#ff8000' }} /> Price: ৳ {price}
                                                 </Typography>
                                                 <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
                                                     <StarIcon sx={{ color: '#ff8000' }} /> Ratings: {rating}
                                                 </Typography>
-                                                <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
-                                                    <LocalGasStationIcon sx={{ color: '#ff8000' }} /> mileage: {mileage} kmpl
-                                                </Typography>
                                             </Box>
                                         </CardContent>
                                         <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
-                                            <NavLink to={`/bikeDetails/${_id}`} style={{ textDecoration: 'none' }}>
+                                            <NavLink to={`/mobileDetails/${_id}`} style={{ textDecoration: 'none' }}>
                                                 <Button sx={{ px: 4, mb: 2, backgroundColor: '#ff8000' }} variant="contained">Buy Now</Button>
                                             </NavLink>
                                         </CardActions>
@@ -68,4 +65,4 @@ const TopBikes = () => {
     );
 };
 
-export default TopBikes;
+export default TopMobiles;
