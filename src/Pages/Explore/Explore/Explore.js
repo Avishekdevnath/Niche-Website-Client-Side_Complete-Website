@@ -50,9 +50,7 @@ const Explore = () => {
                                                 <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
                                                     <StarIcon sx={{ color: '#ff8000' }} /> Ratings: {rating}
                                                 </Typography>
-                                                {/* <Typography sx={{ display: 'flex', alignItems: 'center' }} variant="h6">
-                                                    <LocalGasStationIcon sx={{ color: '#ff8000' }} /> mileage: {mileage} kmpl
-                                                </Typography> */}
+                                               
                                             </Box>
                                         </CardContent>
                                         <CardActions sx={{ display: 'flex', flexDirection: 'column' }}>
