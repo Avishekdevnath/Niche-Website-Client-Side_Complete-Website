@@ -1,5 +1,5 @@
-# MobilePoint
-It's a demo website for online mobile shop. Here anyone can buy their favourite mobile.
+# Dhoom with redux
+It's a demo website for online BIKE shop. Here anyone can buy their favourite BIKE.
 
 ## Features
 In this website 
